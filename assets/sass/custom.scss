@@ -1,0 +1,127 @@
+	//All Custom sass
+
+@import '_reveal.scss';
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+*, html, body {
+	font-family: 'Raleway', sans-serif !important;
+	font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	text-align: left;
+}
+
+h1 {
+	font-size: 2.6em;
+	margin-bottom: 1em;
+	border-bottom: 1px solid #efefef;
+	padding-bottom: 0.25em;
+}
+
+h2 {
+	color: #333;
+	font-size: 1.65em; 
+	padding-left: 0.2em;
+	margin-bottom: 0.25em;	
+	margin-top: 1em;
+	opacity: 0.8;
+}
+
+h3 {
+	color: #333;
+	font-size: 1.6em;
+	font-weight: 100;
+	padding-left: 0.2em;
+	opacity: 0.9;
+	font-style: italic;
+}
+
+h4 {
+	font-size: 1.2em; 
+	font-weight: 600;
+	padding-left: 0.3em;
+	margin-bottom: 1em;
+	margin-top: 1.4em;
+	color: #333;
+}
+
+h6 {
+	font-size: 0.5;
+	color: #333;
+	opacity: 0.7;
+}
+
+p {
+	font-size: 1.3em;
+	padding-left: 0.4em;
+	margin-bottom: 1.8em;
+	margin-top: 2.2em;
+}
+
+iframe {
+	margin: 1em;
+}
+
+img {
+	width: 800px;
+	display: block;
+	margin: 0 auto;
+}
+
+section {
+ 	overflow-y: scroll  !important;
+    overflow: scroll !important;
+    height: 800px;
+}
+
+a {
+	text-align: left;
+	display: block;
+	font-size: 1.4em !important;
+	margin: 1.2em 0em 2em 2.5em !important;
+	text-decoration: underline;
+}
+
+h3 a, 
+h2 a {
+	text-align: left;
+	display: block;
+	font-size: 1em !important;
+	margin: 1.2em 0em 2em 0.1em !important;
+	text-decoration: underline;
+}
+
+pre {
+	font-size: 1.1em !important;
+}
+
+i {
+	display: block;
+	font-size: 1em;
+	padding-left: 1em;
+	margin-left: 1.3em;
+	margin-bottom: 1.3em;
+	border-left: #8CD5FF 1px solid;
+}
+
+b {
+	font-weight: 800 !important;
+	font-size: 1.15em !important;
+	color: #000 !important;
+}
+
+.language-javascript span.token.operator {
+	background-color: #2a2a2a !important;
+}
+
+code.language-javascript {
+	font-size: 1.3em !important;
+}
+
+.slide {
+	padding: 0.5em;
+}
+
+
+

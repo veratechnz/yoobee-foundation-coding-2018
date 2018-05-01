@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li>one</li>
+		<li id="two">two</li>
+		<li>three</li>
+		<li>four</li>
+		<li class="five">five</li>
+	</ul>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi officia, eaque aperiam blanditiis laboriosam nihil eos culpa adipisci quod impedit deserunt fugiat in ipsa molestiae labore quo alias totam, sint!</p>
+	<!-- Script always above the closing boday tag -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+	<script>
+	//Here we have assigned three html items with jquery
+	//The 3 items are in the DOM above
+	//We then use vanilla javascript to assign the items via jQuery
+	//To a normal javascript variable - 'grabStuff'
+		// var grabStuff = $('#two, .five, p');
+		// console.log(grabStuff);
+
+	//We use the hide method and then use a callback function
+	//to do something else after the hide process. 
+		// $('#two').hide(4000, function(){
+		// 	$('#two').show(1000);
+		// });
+
+	// $('#two').hide(4000);
+	// $('.five').show(4000);
+
+	// jQuery chaining pattern
+	// Stuff or actions we want to happen
+	// should be placed within the curly brackets of the
+	// Function body
+
+	$(document).ready(function(){
+
+		//Do this:
+		$( 'window' ).scroll(function() {
+	  		 $('ul').hide(1000)
+	  		 .show(1000)
+	  		 .fadeIn(5000)
+	  		 .fadeOut(10000);
+		});
+
+	}); // doc ready ends
+
+
+
+
+
+
+	</script>	
+
+</body>
+</html>

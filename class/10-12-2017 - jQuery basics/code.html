@@ -1,0 +1,88 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Jquery Time</title>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<style>
+		body {
+			height: 2000px;
+		}
+		p{font-size: 34px; color: #000; text-align: center; padding-top: 20%;}
+		p:last-child{font-size: 54px;}
+		.dabox{height: 340px;}
+		.dabox:nth-child(1){background-color: #efefef;} 
+		.dabox:nth-child(2){background-color: #ff0000;} 
+		.dabox:nth-child(3){background-color: #2BD3C6;} 
+		.dabox:nth-child(4){background-color: #99FB68;} 
+	</style>
+</head>
+<body>
+	<!-- .container>.row*2>.col-md-6*2 -->
+	<div class="container">
+		<div class="row" id="bgpap">
+			<div class="col-lg-6 dabox" id="one"><p>ONE</p></div>
+			<div class="col-lg-6 dabox" id="two"><p>TWO</p></div>
+			<div class="col-lg-6 dabox" id="three"><p>THREE</p></div>
+			<div class="col-lg-6 dabox" id="four"><p>FOUR</p></div>
+		</div>
+		<div class="row">
+			<!-- <div class="col-md-12"><p>This is going to move around</p></div> -->
+		</div>
+	</div>
+
+	<!-- All Scripts -->
+	<!-- Do a troubleshoot with the main script above the libraries -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<script>
+	// Some basic jQuery hiding methods
+	$(document).ready(function(){
+
+		// A basic hide and show funtion on page load with jQuery.
+			// $('#one').hide(5000, function(){
+			// 	$('#one').show(5000);
+			// });
+		
+		// Here we have some basic chaining. 
+			// $('#one')
+			// .hide(3000)
+			// .show(3000)
+			// .fadeOut(3000)
+			// .fadeIn(3000)
+			// .slideUp(2000)
+			// .slideDown(3000);
+
+		//Now we can exandd on the slide and show methods
+			// $('#one').hide('slide', {direction: 'left'}, 4000)
+			// 		 .show('slide', {direction: 'left'}, 4000);
+
+		// Hover method
+		$( '#two' ).hover(function() {
+		  $( '#four' ).fadeOut( 1000 ).fadeIn(1000);
+		});
+
+		// Click method
+		$( "#one" ).click(function() {
+		  $( "#three" ).slideUp( 40000, function() {
+		    console.log('finished buddy');
+		  });
+		});
+
+		// Scroll method
+		$( window ).scroll(function() {
+			console.log('a');
+		  $('.dabox').fadeOut(5000);
+		});
+
+		//This following script makes each fade out sequentually. 
+			// $('.dabox').each(function(i) {
+		 //  		$(this).delay(1000 * i).fadeOut(6000);
+			// });
+
+
+	}); //Document ready ends.
+	</script>
+</body>
+</html>

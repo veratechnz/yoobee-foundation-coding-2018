@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*, html, body {
+		font: 16px;
+	}
+	p {
+		font: 1em;
+	}
+	h1 {
+		font: 2.43em;
+	}
+	#myId{
+		color: red;
+	}
+	</style>
+</head>
+<body>
+	<!-- This paragraph id is camelCase -->
+	<p id="myId" class="my-class">Hi there</p>
+	<script>
+		// // // These represent different heights
+		// // var thisA, thisB, thisC;
+
+		// // //T his represents Jared's height
+		// var jaredsHeight = 186;
+
+		// // Here we have made a variable that targets the 
+		// // dom via the getElementById method
+		// var target = document.getElementById('myId');
+
+		// // This is a method called console
+		// console.log(jaredsHeight);
+		// // console.dir(target);
+		// // target.style.display = 'none';
+
+		var today = new Date();
+		var hourNow = today.getHours();
+		var greeting;
+
+		// console.log('this is var today ' + today);
+		// console.log('this is var hourNow '  + hourNow);
+		// console.log('c ' +             greeting);
+
+		console.log(hourNow)
+		if (hourNow > 18) {
+			//If line above was true this happens
+			//if line above is false else happens below
+			greeting = 'Good Evening!!!';
+		} else {
+			greeting = 'Good Morning!!!';
+		}
+
+
+
+
+	</script>
+</body>
+</html>

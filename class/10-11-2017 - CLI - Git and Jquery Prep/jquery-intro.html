@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Intro</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<h1 class="my-title" id="theId">Hello World</h1>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script>
+	// This is saying that once the document is ready....
+	// go do line 16
+	$(document).ready(function(){
+
+		//Ised h1 as a selector
+		$('#theId').hide(2000);
+
+		//Combine this jQuery with a click event
+		//to trigger the above hide process
+
+
+	});
+	</script>
+
+</body>
+</html>
