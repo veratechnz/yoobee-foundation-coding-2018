@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>JS Fundamentals Continued</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <style>
+        body {
+          font-size: 18px;
+          padding: 3em;
+        }
+      </style>
+  </head>
+  <body>
+
+    <form>
+      Type Something: <input type="text" name="fname" id="anInput"><br>
+      <button id="trigger" type="button" style="margin-top: 2.5em">Trigger</button>
+    </form>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+
+    <script>
+    // 1. WAYS OF MAKING AN OBJECT***
+
+    // A construtor function - not so common***
+    // function Hotel(name, rooms) {
+        //   this.name = name;
+        //   this.room = rooms;
+    // }
+
+    // Calling and assigning the constructor function to a
+    // variable hotelA. This will become an object
+
+    // var hotelA = new Hotel('Hilton', 500);
+    // console.log(hotelA);
+
+    // Dot notation for adding to an object.
+    // This adds the properties age and lastName to 
+    // the object:
+    //   var person = {
+            // firstName: 'John'
+    //   };
+    //   person.age = 22;
+    //   person.lastName = 'Smith';
+
+    //// delete person.firstName;
+
+
+// ------------------------------------------------------------
+// 2. USING INPUT DATA FROM THE DOM AND CHECKING ITS VALUE***
+
+   // When the page loads = document.ready
+      $(document).ready(function(){
+        
+        // This array will hold data from the input field
+        // ***NOTE we post it outside of the click function
+        // so it is stored in memory      
+        var storageArray = [];
+      
+        // This is a jQuery click event that is set on the 
+        // #trigger id button in the hmtl 
+          $('#trigger').click(function(){
+
+            // Below, we are grabbing the input value from
+            // the html form input
+            var getValue = document.getElementById('anInput').value;
+            
+            // This conditional checks to see if the vale of 
+            // getValue/the input field is equal to 'remove'
+            if(getValue === 'remove') {
+              //This will only happen if someone types 'remove'
+              storageArray.pop();
+              alert('popped or deleted last element');
+            } else {
+              // This is the code that will run if someone types anything 
+              // other than remove
+              storageArray.push(getValue);
+            }
+            
+            console.log(storageArray);
+
+
+            // ***BELOW HAS INFO ON TRUE FALSE VALUES AND HOW TO TURN 
+            // A STRING INTO A NUMBER
+
+            // Here we are logging the number var created with the parseInt method. This would turn a number STRING eg '27' into an actual number eg 27. 
+            // parseInt turns a string into a number.
+            var getNumber = parseInt(getValue);
+
+            // Here we use typeof to find out what a variable is
+            // i.e - string/boolean/object/array/number
+            console.log(typeof getNumber);
+
+            // TRUTH & FALSEY***
+            var truthyVal = 1; //1.
+            var falsyVal = 0; //2. 
+            // -----------------------------
+            var realTrueVal = true; //3.
+            var realFalseVal = false; //4.
+
+            var trueElement = document.getElementById('trigger'); //5.
+            var falseElement = document.getElementById('notInTheDom'); //6.
+
+            if (falseElement) { //Change this to test vars 1 - 6
+              console.log('this is true');
+            } else {
+              console.log('this is false'); 
+            };
+
+          }); // clickfunction ends here
+
+
+      }); // Document.ready ends
+// -----------------------------------------------------------------------
+
+// ***FUNCTIONS:
+
+    // FUNCTION DECLARATIONS***
+    // Function declarations can be called from above
+    // aBasicFunctionDeclaration();
+
+    // A function a Basic Function Declaration
+    // function aBasicFunctionDeclaration () {
+    //   alert('I am a function declaration')
+    // };
+
+    // ---------------------------------------------------
+
+    // FUNCTION EXPRESSIONS***
+    // A function expression that calls/invokes itself
+    // var aFunctionExpression = function () {
+    //   alert('This is a function expression')
+    // };
+
+    // Invoking the function expression
+    // aFunctionExpression();
+
+    // var aSelfInvokingFunctionExpression = function () {
+    //   alert('This is a function expression')
+    // }(); // The 2 parentheses on the left call the function
+
+
+    </script>
+  </body>
+
+</html>
