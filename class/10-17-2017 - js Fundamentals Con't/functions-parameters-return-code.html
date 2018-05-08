@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body, html {
+      font-size: 16px;
+      background-color: pink;
+      height: 1000px;
+    }
+    li {
+      padding-left: 5em;
+      font-size: 2em;
+    }
+  </style>
+</head>
+<body>
+
+
+
+  <ul>
+    <li id="one">1</li>
+    <li id="two">2</li>
+    <li id="three">3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+  </ul>
+
+  <script>
+
+// ***1. USING PARAMETERS & ARGUMENTS IN FUNCTIONS
+// This function takes 2 parameters that change the color
+// and reference the id of the element
+  function changeColor (color, id) {
+    var el = document.getElementById(id);
+    el.style.color = color;
+  }
+
+  function areaCalc (width, height) {
+    var area = width * height;
+    return area;
+  }
+
+  var a = 'pink';
+  var b = 'two';
+  var c = 22;
+  var d = 55;
+
+  // We can then invoke the functions with real arguments
+  // or with variables that represent the real data var a,b,c,d above. 
+  changeColor('purple', 'three');
+  changeColor(a, b);
+  console.log(areaCalc(c, d));
+
+// 2. 3Three Function patterns (declaration/expression/method) and the return statement
+    
+    // A FUNCTION DECLARATION
+    function getArea () {
+      var width = 100;
+      var height = 50;
+      return width * height;
+    };
+    
+    // A FUNCTION DECLARATION WITH ARGUMENTS
+    function timesTen (number) {
+      alert(number * 10);
+      return number * 10;
+    };
+    
+    // A FUNCTION EXPRESSION
+    var timesTenExp = function (number) {
+      alert(number * 10);
+    };
+
+    // METHODS - STORED IN AN OBJECT CALLED myMethods
+    var myMethods = {
+      firstMethodTimesTen: function (number) {
+        return number * 10;
+      },
+    
+      secondMethodTimesTwenty: function () {
+        return number * 20;
+      }
+    };
+    
+    // Here we invoke firstMethodTimesTen and assign the value to a new variable called result. The value is coming from the return statement within the method/function.    
+    var result = myMethods.firstMethodTimesTen(55);
+    console.log(result);
+
+    // Here we are passing the invoked getArea function to the timesTen function as an argument.  
+    var getAreaTimesTen = timesTen(getArea(50, 1000));
+    console.log(getAreaTimesTen);
+
+  </script>
+</body>
+</html>
