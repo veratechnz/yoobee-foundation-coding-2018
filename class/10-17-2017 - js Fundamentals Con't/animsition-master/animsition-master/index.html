@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="dist/css/animsition.css">
+</head>
+<body>
+
+  <!-- Animsition Page -->
+    <div class="animsition">
+      <h1>Home Page</h1>
+      <a href="internal-page.html" class="animsition-link">Internal Page</a>
+   </div>
+   <!-- Animsition Page **ENDS-->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+  <script src="dist/js/animsition.js"></script>
+  <script>
+    $(document).ready(function() {
+      $(".animsition").animsition({
+        inClass: 'rotate-in',
+        outClass: 'rotate-out',
+        inDuration: 5000,
+        outDuration: 2000,
+        linkElement: '.animsition-link',
+        // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+        loading: true,
+        loadingParentElement: 'body', //animsition wrapper element
+        loadingClass: 'animsition-loading',
+        loadingInner: '', // e.g '<img src="loading.svg" />'
+        timeout: false,
+        timeoutCountdown: 5000,
+        onLoadEvent: true,
+        browser: [ 'animation-duration', '-webkit-animation-duration'],
+        // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+        // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+        overlay : false,
+        overlayClass : 'animsition-overlay-slide',
+        overlayParentElement : 'body',
+        transition: function(url){ window.location.href = url; },
+        end: function(){
+          alert('ended');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
