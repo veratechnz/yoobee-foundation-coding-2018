@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Foundation Coding</title>
+	<link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../assets/fonts/css/font-awesome.css">
+	<link rel="stylesheet" href="../../assets/css/prism.css">
+	<link rel="stylesheet" href="../../assets/css/prism-okaidia.css">
+	<link rel="stylesheet" href="../../assets/css/custom.min.css">
+</head>
+	<!-- data attribute for js validation -->
+	<body data-page="membership">
+		  
+			<div class="reveal">
+
+					<body>
+						<div class="reveal">
+							<div class="slides">
+
+								<section>
+									<h1>Switch Statement Con't </h1>
+									<h2>How to comment</h2>
+									<a href="https://www.digitalocean.com/community/tutorials/how-to-write-comments-in-javascript">https://www.digitalocean.com/community/tutorials/how-to-write-comments-in-javascript</a><br><br>
+									<h2>JS coding conventions</h2>
+									<a href="https://www.w3schools.com/js/js_conventions.asp">https://www.w3schools.com/js/js_conventions.asp</a><br><br>
+									<h2>Crockford js coding conventions</h2>
+									<a href="http://javascript.crockford.com/code.html">http://javascript.crockford.com/code.html</a>
+								</section>
+
+								<section>
+									<h1>Self Invoking Functions / Iife</h1>
+									<h2>Example here</h2>
+									<a href="https://stackoverflow.com/questions/8228281/what-is-the-function-construct-in-javascript">https://stackoverflow.com/questions/8228281/what-is-the-function-construct-in-javascript</a>
+									<img src="../../assets/images/iffe.jpg" alt="">
+									<img src="../../assets/images/iffe-exp.jpg" alt="">
+								</section>
+								<!--***Checkpoint - Apply at least three coding conventions improvement to this demo code. 
+								- Also encompass all of the code in a self invoking function. --> 
+								<section>
+									<h1>Self Invoking Function Expression</h1>
+									<h2>Variables / Functions / Public / Private</h2>
+									<img src="../../assets/images/sife.jpg" alt="">
+								</section>
+
+								<section>
+									<h1>Code Review</h1>
+									<h2>Functions within functions & Scope</h2>
+									<pre><code class="language-javascript">
+										// Self invoking function expression
+										var aFunction = function(){
+											var private = 'a string';
+											// We can console.log(a);
+											// It is in the local scope of this function
+										}
+										
+										// Var a is not accessible to this log.
+										// Var a is private and not in the global 
+										// scope. var a is within aFunction
+										console.log(a);
+
+										function bFunction(){
+											// This function tries to return
+											// var a. But var a is private and within 
+											// aFunction. So NOT available/visible to this 
+											// function.
+											return a;
+										}
+										
+										//invoke bFunction
+										console.log(bFunction());
+
+										//Immediately invoked function 
+									</code></pre>
+								</section>
+
+								<section>
+									<h1>Scope</h1>
+									<img src="../../assets/images/scope.jpg" alt="">
+								</section>
+
+								<section>
+									<h1>Scope Global</h1>
+									<img src="../../assets/images/scope-global.jpg" alt="">
+								</section>
+
+								<section>
+									<h1>Hoisting</h1>
+									<h2>In relation to invoking functions & variables</h2>
+									<img src="../../assets/images/hoisting.jpg" alt="">
+								</section>
+
+								<section>
+									<h1>Decisions- Switch Statement</h1>
+									<img src="../../assets/images/switch.jpg" alt="">
+								</section>
+
+							</div>
+						</div>
+					</body>
+
+			</div> <!-- Reveal Div Ends -->
+
+			<script src="../../assets/js/jquery.js"></script>
+			<script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+			<script src="../../assets/js/prism.js"></script>
+			<script src="../../assets/js/bundle.js"></script>
+	</body>
+</html>
