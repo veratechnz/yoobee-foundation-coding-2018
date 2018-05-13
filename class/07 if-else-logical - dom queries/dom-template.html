@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Template</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<h1 style="padding-left: 1em;">A List</h1>
+	<p id="para"></p>
+	<ul>
+		<li class="red">red</li>
+		<li id="another">another</li>
+		<li class="hot">hot</li>
+		<li class="blue">blue</li>
+		<li class="green">green</li>
+		<li id="new">new</li>
+		<li class="hot">hot number 2</li>
+	</ul>
+
+	<script>
+
+		//Vanilla js code for accessing dom elements wrapped in a function
+		//with a relevant argument
+		function accessDom(elementString){
+			var elements = document.getElementsByClassName(elementString);
+			if (elements.length >= 1) {
+
+				// console.dir(elements['1']);
+				console.dir(elements.item(1));
+
+			};			
+		}
+
+		function accessDomReturnText(elementString){
+			var elements = document.getElementsByClassName(elementString);
+			if (elements.length >= 1) {
+
+				// console.dir(elements['1']);
+				grabText =  elements.item(1).textContent;
+
+			};	
+
+			return grabText;		
+		}
+
+		//Function invokation
+		accessDom('hot');
+		alert(accessDomReturnText('hot'));
+
+	</script>
+</body>
+</html>

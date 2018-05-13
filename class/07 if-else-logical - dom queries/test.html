@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<section id="page1">
+	  	<h1>Did you pass?</h1>
+	  	<section id="answer"></section>
+	</section>
+	<script>
+		var score = 75;     // Score
+		var msg;            // Message
+
+		if (score >= 50) {  // If score is 50 or higher
+		  msg = 'Congratulations!';
+		  msg += ' Proceed to the next round.'; 
+		}
+
+		var el = document.getElementById('answer');
+		el.textContent = msg;
+	</script>
+</body>
+</html>

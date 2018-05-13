@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Foundation Coding</title>
+	<link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../assets/fonts/css/font-awesome.css">
+	<link rel="stylesheet" href="../../assets/css/prism.css">
+	<link rel="stylesheet" href="../../assets/css/prism-okaidia.css">
+	<link rel="stylesheet" href="../../assets/css/custom.min.css">
+</head>
+	<!-- data attribute for js validation -->
+	<body data-page="membership">
+		  
+			<div class="reveal">
+
+					<body>
+						<div class="reveal">
+							<div class="slides">
+
+								<section>
+									<h1>Switch Statement Con't </h1>
+									<pre><code class="language-javascript">
+										var text;
+										var fruits = document.getElementById("myInput").value;
+										// fruits represents the input value variable above.
+										switch(fruits) {
+										// Each case below checks against the input value/string
+										// and if true/or a match, then resets the text variable
+										// to the particular string value
+										    case "Banana":
+										        text = "Banana is good!";
+										        // break, breaks out of the code block
+										        // i.e. a match is found and the code ends 
+										        break;
+										    case "Orange":
+										        text = "I am not a fan of orange.";
+										        break;
+										    case "Apple":
+										        text = "How you like them apples?";
+										        break;
+										    // If no match is found from the cases above, the following
+										    // default value will be applied 
+										    default:
+										        text = "I have never heard of that fruit...";
+										}
+									</code></pre>
+								</section>
+
+								<section>
+									<h1>Decision Making & Conditionals</h1>
+									<img src="../../assets/images/conditional.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>Testing Template</h1>
+									<pre>
+										<code class="language-javascript">
+											//My testing variables
+											var a, b, c, d, e, f;
+											a = 5;
+											b = 7;
+											c = 10;
+											d = 55;
+											e = 'a string';
+											f = 10;
+
+											//My array of items for testing
+											var myArray = [5, 7, 10, 'string', 10, 55, 2000, false, 'another string'];
+
+											//We can log the condition and test for true or false results
+											console.log((b >= a) && (c == f));
+										</code>
+									</pre>
+								</section>
+
+
+								<section>
+									<h1>Comparison Operators</h1>
+									<img src="../../assets/images/comparison-ops.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>Comparison Operators</h1>
+									<img src="../../assets/images/comparison-ops-b.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>Comparison Operators</h1>
+									<img src="../../assets/images/comparison-ops-c.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>Comparison Operators</h1>
+									<img src="../../assets/images/comparison-ops-d.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+
+								<section>
+									<h1>Comparison Operators</h1>
+									<img src="../../assets/images/comparison-ops-e.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>Comparison Operators</h1>
+									<img src="../../assets/images/comparison-ops-f.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>Comparison Operators</h1>
+									<img src="../../assets/images/comparison-ops-g.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>Logical Operators</h1>
+									<img src="../../assets/images/comparison-ops-h.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>Logical Operators</h1>
+									<img src="../../assets/images/comparison-ops-i.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>If // If Else</h1>
+									<img src="../../assets/images/if-else.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<!-- Test some conditionals, comparisons & logical operators -->
+								<!-- within the following coding template -->
+
+								<section>
+									<h1>Duckett example of if/else witing the DOM</h1>
+									<h3>1. Research the duckett example and make some changes/adjustments to the conditional in the example. </h3>
+									<a href="http://javascriptbook.com/code/c04/if-statement.html">http://javascriptbook.com/code/c04/if-statement.html</a>
+									<h3>2. ***Checkpoint Apply a conditional to some of your previous code</p>
+										<p>- It should effect the DOM - (no console.log)</p>
+										<p>- It should make use of both comparison operators and logical operators</p>
+										<p>- Use a function to wrap and invoke your conditional</p>
+										<p>- Once working, please 1. comment your code and 2. push to github</p>
+										<p>- Name the github repo "conditional-demo"</p>
+								</section>
+								
+								<section>
+									<h1>DOM Queries</h1>
+									<img src="../../assets/images/dom-q.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>DOM Queries</h1>
+									<img src="../../assets/images/dom-tree.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>DOM Queries</h1>
+									<img src="../../assets/images/dom-d-var.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>DOM Queries</h1>
+									<img src="../../assets/images/dom-elements.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>DOM Queries</h1>
+									<img src="../../assets/images/dom-elements-b.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>DOM Queries</h1>
+									<img src="../../assets/images/dom-element-selector.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>DOM Queries</h1>
+									<img src="../../assets/images/dom-element-multiple.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>***Checkpoint</h1>
+									<p>1. Create a list of at least 5 items with html</p>
+									<p>2. Assign each item with either a class or an id or both</p>
+									<p>3. Make sure you have at least 2 <em>identical</em> class names</p>
+									<p>4. Select a single class and adjust it's css with vanilla js</p>
+									<p>5. Select a single id and adjust its css with vanilla js</p>
+									<p>6. Wrap your code in one or more relevantly named functions</p>
+									<p>7. Comment your code and push to git in a new repo named dom-queries</p>
+								</section>
+								<!-- ***Checkpoint
+									Create an html dom template
+									Use js to access the dom and adjust css
+									Use at least 3 separate getElement dom Query methods
+									Create three separate functions for each of the dom queries and related css adjustment
+									Wrap all 3 functions and function invokations in an IIFFE
+									Comment once completed and push to git as a repo called js-dom-queries
+									***All vanilla.js i.e. no jquery allowed  
+								-->
+
+								<section>
+									<h1>Creative Code Session</h1>
+									<p>- Canvas and Audio capability</p>
+									<p>- Lets make an in browser sampler</p>
+									<p>- HTML design</p>
+									<p>- Js coded</p>
+									<p>- Git teams</p>
+									<pre>
+										<code class="language-javascript"">
+											app.cardSound = function(){
+
+												var snd = new Audio("video/click.wav"); // buffers automatically when created
+												snd.volume = 0.1;
+												var elements = document.getElementsByClassName('card');
+
+												//Play the audio file
+												var playTime = function(e){
+													snd.play();
+												};
+
+												// loop for all elements in array to apply event listener
+												for (var i = elements.length - 1; i >= 0; i--) {
+													elements[i].addEventListener("mouseenter", playTime, false);
+												}
+
+											};
+										</code>
+									</pre>
+								</section>
+							</div>
+						</div>
+					</body>
+
+			</div> <!-- Reveal Div Ends -->
+
+			<script src="../../assets/js/jquery.js"></script>
+			<script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+			<script src="../../assets/js/prism.js"></script>
+			<script src="../../assets/js/bundle.js"></script>
+	</body>
+</html>
