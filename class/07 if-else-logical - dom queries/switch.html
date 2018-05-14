@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html>
+<style>
+  img {
+    display: none;
+  }
+</style>
 <body>
 
 <p>Write Banana, Orange or Apple in the input field and click the button.</p>
 <p>The switch statement will execute a block of code based on your input.</p>
 
 <input id="myInput" type="text">
+<img src="apple.jpg" alt="" id="apple">
+<img src="orange.jpg" alt="" id="orange">
+<img src="banana.jpg" alt="" id="banana">
 
 <button onclick="myFunction()">Try it</button>
 
@@ -13,6 +21,12 @@
 
 <script>
 function myFunction() {
+
+var orange = document.getElementById('orange');
+var banana = document.getElementById('banana');
+var apple = document.getElementById('apple');
+
+
     var text;
     var fruits = document.getElementById("myInput").value;
 
@@ -22,15 +36,27 @@ function myFunction() {
         break;
         case "Orange":
         text = "I am not a fan of orange.";
+          orange.style.display = 'block';
+          banana.style.display = 'none';
+          apple.style.display = 'none';
         break;
         case "Apple":
-        text = "How you like them apples?";
+          apple.style.display = 'block';
+          orange.style.display = 'none';
+          banana.style.display = 'none';
         break;
         default:
         text = "I have never heard of that fruit...";
     }
     document.getElementById("demo").innerHTML = text;
 }
+
+
+
+
+
+
+
 </script>
 
 </body>

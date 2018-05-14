@@ -28,6 +28,7 @@
 	  <!-- Indicates a successful or positive action -->
 	  <button type="button" class="btn btn-success">TEST</button>
 	</div>
+	<h1 class="text-center" id="output"></h1>
 </div>
 
 
@@ -38,25 +39,30 @@
 	<script>
 	(function(){
 
-		//Access input element in DOM/HTML
+		//Access input element in DOM/HTML - DOM QUERIES
 		var input = document.getElementById('numbers');
+		var output = document.getElementById('output');
 
 		// Basic jQuery click event for testing
 		$('button').click(function(){
+
 			console.dir(input.value);
 
 			// Function calls
 			testFalsy(input.value);
 			turnStringToNumber(input.value);
+
 		});
 
 		function testFalsy (val) {
+
 			console.log(val);
 			// Why does this condition not work
 			// if we enter 22 into the input field ?
 			if (val === 22) {
 				console.log('works');
 			}
+
 		}
 
 		// Finish the function below so
@@ -65,11 +71,22 @@
 		// Please do not change the conditional
 		// i.e line 68 - 72. 
 		function turnStringToNumber (val) {
-			if (val === 22) {
-				console.log('working now');
+
+			if (val === 'test') {
+				outPutToDomMsg('Working, input was: ' + val);
 			} else {
-				console.log('not working');
+				outPutToDomMsg('Not working, input was: ' + val);
 			}
+
+		}	
+
+		// A clean way of injecting content into the 1 or html
+		function outPutToDomMsg (content) {
+			// The code below resets the element h1 content
+			output.textContent = '';
+			// The code below cleanly adds html to the DOM
+			output.insertAdjacentHTML( 'beforeend', content )
+			console.dir(output);
 		}
 
 	})(); // iffe ENDS
