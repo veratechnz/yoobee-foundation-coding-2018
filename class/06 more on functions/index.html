@@ -49,7 +49,7 @@
 									<pre><code class="language-javascript">
 										// Self invoking function expression
 										var aFunction = function(){
-											var private = 'a string';
+											var a = 'I am private';
 											// We can console.log(a);
 											// It is in the local scope of this function
 										}
@@ -60,11 +60,11 @@
 										console.log(a);
 
 										function bFunction(){
-											// This function tries to return
-											// var a. But var a is private and within 
-											// aFunction. So NOT available/visible to this 
-											// function.
-											return a;
+											var b = 'returned so now available';
+											// This function returns
+											// the private variable b
+
+											return b;
 										}
 										
 										//invoke bFunction
