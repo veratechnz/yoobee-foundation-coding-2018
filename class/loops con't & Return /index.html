@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Foundation Coding</title>
+	<link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../assets/fonts/css/font-awesome.css">
+	<link rel="stylesheet" href="../../assets/css/prism.css">
+	<link rel="stylesheet" href="../../assets/css/prism-xonokai.css">
+	<link rel="stylesheet" href="../../assets/css/custom.min.css">
+</head>
+	<!-- data attribute for js validation -->
+	<body data-page="membership">
+
+			<div class="reveal">
+
+					<body>
+						<div class="reveal">
+							<div class="slides">
+								<section>
+									<h1>Loop Review - Focus on for()</h1>
+									<p>You can think of a loop as a computerized version of the game where you tell someone to take X steps in one direction then Y steps in another; for example, the idea "Go five steps to the east" could be expressed this way as a loop - Modzilla Developer Docs</p>
+									<pre>
+										<code class="language-javascript">
+											//Breakdown of the for condition:
+											// for ([initialExpression]; [condition]; [incrementExpression])
+											var step;
+											for (step = 0; step < 5; step++) {
+											  // Runs 5 times, with values of step 0 through 4.
+											  console.log('Walking east one step');
+											}
+										</code>
+									</pre>
+								</section>
+
+								<section>
+									<h1>Loops - while & do aWhileLoop</h1>
+									<a href="https://www.w3schools.com/js/js_loop_while.asp" target="_blank">More info at this link</a>
+									<pre>
+										<code class="language-javascript">
+										  function aWhileLoop () {
+										     var text = "";
+										     var i = 0;
+										     while (i < 10) {
+										       text += "The number is " + i;
+										       i++;
+										     }
+										       document.getElementById("demo").innerHTML = text;
+										   }
+
+										   aWhileLoop();
+
+										  function aDoWhileLoop () {
+										     var text = "";
+										     var i = 0;
+										       do {
+										        text += "The number is " + i;
+										         i++;
+										       }
+										       while (i < 10);
+										     document.getElementById("demo").innerHTML = text;
+										  }
+
+										  aDoWhileLoop();
+										</code>
+									</pre>
+								</section>
+
+								<section>
+									<h1>A for loop to update multiple elements - See for-loop.html</h1>
+									<pre>
+										<code class="language-javascript">
+											var times = div.getElementsByTagName("time");
+											for (var i = 0; i < times.length; i++) {
+											    times[i].style.backgroundColor = "#d00";
+											}
+										</code>
+									</pre>
+								</section>
+
+								<section>
+									<h1>A for loop that adjusts array data</h1>
+									<pre>
+										<code class="language-javascript">
+
+											var shoppingCart = [
+											  {item: `soap`, price: 4.99},
+											  {item: `hammer`, price: 19.60},
+											  {item: `tissues`, price: 2.95},
+											];
+
+											//we want to create an array of prices only
+											//i.e data conversion/re-structuring
+
+											var prices = [];
+
+											for (var i = 0, length = shoppingCart.length; i < length; i++) {
+											   prices.push(shoppingCart[i].price);
+											}
+
+											console.log(prices); // [4.99, 19.60, 2.95]
+										</code>
+									</pre>
+								</section>
+
+								<!-- ***CHECKPOINT - Use a for loop to update multiple elements in your html -->
+								<!-- Actions -->
+								<!--
+									Change the css
+									Change some element content
+									Make some elemens completely dissapear
+									All actions must relate to the for loop.
+									Grid, comment and wrap your code in functions
+									Push to the repo
+									***Remember: Having issues, console.log / console.dir is your friend
+									Change the [i] to 'a' or the variable name, as in the examples.
+								-->
+
+								<section>
+									<h1>Functions and Return</h1>
+									<h2>The return statement ends function execution and specifies a value to be returned to the function caller.</h2>
+									<p>return ENDS a function</p>
+									<p>return also produces a value that can be passed around from within your code. This is a big clue that makes js Functional programming so Expressive.</p>
+									<pre>
+										<code class="language-javascript">
+											function square(x) {
+											   return x * x;
+											}
+											var demo = square(3);
+											// demo will equal 9
+										</code>
+									</pre>
+								</section>
+
+								<section>
+									<h1>Functions and Return</h1>
+									<h2>What can a function return? a string, a number, a boolean, an array, an object and.....EVEN ANOTHER FUNCTION</h2>
+									<iframe src="https://giphy.com/embed/l4Ho0At2UD2d7WyD6" width="800" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/latelateshow-james-corden-late-show-l4Ho0At2UD2d7WyD6"></a></p>
+									<h2>Yes, Even Another Function.</h2>
+								</section>
+
+								<section>
+									<h1>Functions & return more examples</h1>
+									<pre>
+										<code class="language-javascript">
+											// We could easily adjust and expand on this
+											// It is currently returning an object.
+
+											function BlockIDA() {
+											    return {
+											            "s":"Images/Block_01.png"
+											            ,"g":"Images/Block_02.png"
+											            ,"C":"Images/Block_03.png"
+											            ,"d":"Images/Block_04.png"
+											    };
+											}
+
+											// Or here we can return an array
+											// With slightly adjusted syntax
+											function BlockIDB() {
+												var myArray = [];
+
+											    return myArray;
+											}
+
+											// Or with the same pattern as BlockIDA
+											function BlockIDC() {
+											    return [1,2,3,'hi there', 'really', false];
+											}
+
+
+											// How do we grab the values or returned items?
+											// Easy, just pull the trigger/invoke
+
+											console.log(BlockIDA());
+
+											var whatIsThis = BlockIDA();
+
+
+
+
+										</code>
+									</pre>
+								</section>
+
+							</div>
+						</div>
+					</body>
+
+			</div> <!-- Reveal Div Ends -->
+
+			<script src="../../assets/js/jquery.js"></script>
+			<script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+			<script src="../../assets/js/prism.js"></script>
+			<script src="../../assets/js/bundle.js"></script>
+	</body>
+</html>
