@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Foundation Coding</title>
+	<link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../assets/fonts/css/font-awesome.css">
+	<link rel="stylesheet" href="../../assets/css/prism.css">
+	<link rel="stylesheet" href="../../assets/css/prism-xonokai.css">
+	<link rel="stylesheet" href="../../assets/css/custom.min.css">
+</head>
+	<!-- data attribute for js validation -->
+	<body data-page="membership">
+		  
+			<div class="reveal">
+
+					<body>
+						<div class="reveal">
+							<div class="slides">
+
+								<section>
+									<h1>Loops</h1>
+									<img src="../../assets/images/loop.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>Loop Counter</h1>
+									<img src="../../assets/images/loop-counter.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>Looping</h1>
+									<img src="../../assets/images/looping.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>For Loops</h1>
+									<p>As long as the condition within the loop is true, the curly brackett code block will continue to run.</p>
+									<p>Notice how the <b>i</b> variable within the condition itself is set, tested then incremented.</p>
+									<a href="http://javascriptbook.com/code/c04/for-loop.html">Duckett online example</a>
+									<pre>
+										<code class="language-javascript">
+											var scores = [24, 32, 17];      // Array of scores
+											var arrayLength = scores.length;// Items in array
+											var roundNumber = 0;            // Current round
+											var msg = '';                   // Message
+											// Loop through the items in the array
+											for (var i = 0; i < arrayLength; i++) {
+											  //Try using a console.log within the loop to visualize it:
+												console.log('a');
+											  // Arrays are zero based (so 0 is round 1)
+											  // Add 1 to the current round
+											  roundNumber = (i + 1);
+											  // Write the current round to message
+											  msg += 'Round ' + roundNumber + ': ';
+											  // Get the score from the scores array
+											  msg += scores[i] + '<br />';
+											}
+											document.getElementById('answer').innerHTML = msg;
+										</code
+									></pre>
+								</section>
+
+
+								<section>
+									<h1>While Loops</h1>
+									<p>We use the previous for loops when the number of iterations are known. We use while loops when the number of iterations are unknown. </p>
+									<p>Simple while loop syntax:</p>
+									<pre>
+										<code class="language-javascript">
+											// When the number of iterations are not known
+											while( i < 10)
+											{
+											    //Some code goes here
+											}
+										</code>
+									</pre>
+									<a href="http://javascriptbook.com/code/c04/while-loop.html">Duckett online example</a>
+									<pre>
+										<code class="language-javascript">
+											var i = 1;       // Set counter to 1
+											var msg = '';    // Message
+
+											// Store 5 times table in a variable
+											while (i < 10) {
+											  msg += i + ' x 5 = ' + (i * 5) + '<br />';
+											  i++;
+											}
+
+											document.getElementById('answer').innerHTML = msg;
+										</code
+									></pre>
+								</section>
+
+								<section>
+									<h1>Do While Loops</h1>
+									<a href="https://www.w3schools.com/jsref/jsref_dowhile.asp">Example at w3</a>
+									<p>This loop will always be executed at least once, even if the condition is false, because the code block is executed before the condition is tested:</p>
+									<pre>
+										<code class="language-javascript">
+											var text = "";
+											var i = 0;
+											do {
+											    text += "The number is " + i;
+											    i++;
+											}
+											while (i < 5);
+										</code>
+									</pre>
+								</section>
+
+								<section>
+									<h1>Duckett Example</h1>
+									<a href="http://javascriptbook.com/code/c04/example.html">Full Example at Duckett Web Site</a>
+									<p>Code and example</p>
+
+									<pre>
+										<code class="language-javascript">
+											var table = 3;             // Unit of table
+											var operator = 'addition'; // Type of calculation
+											var i = 1;                 // Set counter to 1
+											var msg = '';              // Message
+
+											if (operator === 'addition') {
+											  // Do addition
+											  while (i < 11) {
+											    msg += i + ' + ' + table + ' = ' + (i + table) + '<br />';
+											    i++;
+											  }
+											} else {
+											  // Do multiplication
+											  while (i < 11) {
+											    msg += i + ' x ' + table + ' = ' + (i * table) + '<br />';
+											    i++;
+											  }
+											}
+
+											// Write the message into the page
+											var el = document.getElementById('blackboard');
+											el.innerHTML = msg;
+										</code>
+									</pre>
+								</section>
+
+								<section>
+									<h1>Another for loop</h1>
+									<pre>
+										<code class="language-javascript">
+											
+											// Example
+											var ourArray = [];
+												
+											for (var i = 0; i < 5; i++) {
+											  ourArray.push(i);
+											}
+
+											// Setup
+											var myArray = [];
+
+											// Can you tell what this code is doing?
+
+										</code>
+								    </pre>
+								</section>
+								<section>
+									<h1>setTimeout() / setInterval()</h1>
+									<h2>setTimeout()</h2>
+									<pre>
+										<code class="language-javascript">
+										// window.setTimeout(function, milliseconds);
+
+										var x = document.getElementById("txt");
+										setTimeout(function(){ x.value = "2 seconds" }, 2000);
+										setTimeout(function(){ x.value = "4 seconds" }, 4000);
+										setTimeout(function(){ x.value = "6 seconds" }, 6000); 
+
+										//or
+										setTimeout(function(){ alert("Hello"); }, 3000);
+										</code>
+									</pre>
+									<p>
+									The window.setTimeout() method can be written without the window prefix.
+
+									The first parameter is a function to be executed.
+
+									The second parameter indicates the number of milliseconds before execution.</p>
+									<h2>setInterval()</h2>
+									<p>The setInterval() method repeats a given function at every given time-interval.
+
+									The window.setInterval() method can be written without the window prefix.
+
+									The first parameter is the function to be executed.
+
+									The second parameter indicates the length of the time-interval between each execution.
+
+									This example executes a function called "myTimer" once every second (like a digital watch).</p>
+									<pre>
+										<code class="language-javascript">
+										// window.setInterval(function, milliseconds);
+
+										//or
+										setInterval(function(){ alert("Hello"); }, 3000);
+										
+										//or
+										//Here we can see it invoking the function myTimer which
+										//is defined further down the script. (after 1000 miliseconds)
+
+										//setInterval() is being assigned to a variable so that we can clear
+										// the interval via the same variable with clearInterval()
+										var myVar = setInterval(function(){ myTimer() }, 1000);
+
+										function myTimer() {
+										    var d = new Date();
+										    var t = d.toLocaleTimeString();
+										    document.getElementById("demo").innerHTML = t;
+										} 
+										</code>
+									</pre>
+								</section>
+
+								<section>
+									<h1>clearInterval()</h1>
+									<a href="https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_clearinterval">Example at W3</a>
+									<pre>
+										<code class="language-javascript">
+											myVar = setInterval(function, milliseconds);
+											clearInterval(myVar)
+
+											// or
+
+											var myVar = setInterval(function(){ myTimer() }, 1000);
+
+											function myTimer() {
+											    var d = new Date();
+											    var t = d.toLocaleTimeString();
+											    // use a paragraph with an id of demo
+											    document.getElementById("demo").innerHTML = t;
+											}
+
+											function myStopFunction() {
+											    clearInterval(myVar);
+											}
+										</code>
+									</pre>
+								</section>
+
+								<!-- Checkpoint, run a loop after 5 seconds. -->
+
+								<section>
+									<h1>An Infinite Loop</h1>
+									<p>This loop will create an error. What is the problem? Is there a problem?</p>
+									<p>If true is always found to be true, the loop and the console.log in the code block will continously run.</p>
+									<p>Try running the following code in your browser. Be careful, the browser may crash!</p>
+
+									<pre>
+										<code class="language-javascript">
+										while (true) {
+										    //your code
+										    console.log('a');
+										}
+										</code>
+									</pre>
+
+										</code
+									></pre>
+								</section>
+
+
+							</div>
+						</div>
+					</body>
+
+			</div> <!-- Reveal Div Ends -->
+
+			<script src="../../assets/js/jquery.js"></script>
+			<script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+			<script src="../../assets/js/prism.js"></script>
+			<script src="../../assets/js/bundle.js"></script>
+	</body>
+</html>

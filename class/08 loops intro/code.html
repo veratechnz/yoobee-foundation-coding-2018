@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    	html {
+		font-family: arial;
+	   }
+    ul {
+    		list-style: none;
+    	}
+    li {
+    		padding: 0.5em;
+    		text-align: center;
+    	}
+  </style>
+</head>
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+  </ul>
+  <script>
+
+  //iffe B
+  (function(){
+
+    var myArray = ['a', 'b', 'c', 'd', 'e', 'a', 'a', 'a', 1, 55, true, 'a', 'b', 'z'];
+    var listItems = document.querySelectorAll('li');
+    // console.log(listItems);
+
+    // for (var i = 0; i < myArray.length; i++) {
+    //   // console.log(myArray.length);
+    //   // console.log(i + ' counter')
+    //   console.log(myArray[2]);
+    // }
+
+    // function loopListItems () {
+    //   for (var i = 0; i < listItems.length; i++) {
+    //     listItems[i].style.color = 'pink';
+    //     listItems[i].style.fontSize = '28px';
+    //     // listItems[i]
+    //   }
+    // }
+    //
+    // loopListItems();
+
+    // function loopThreeListItems () {
+    //   for (var i = 0; i < 3; i++) {
+    //     listItems[i].style.color = 'blue';
+    //     listItems[i].style.fontSize = '8px';
+    //     // listItems[i]
+    //   }
+    // }
+    //
+    // loopThreeListItems();
+  var storageArray = [];
+
+    function usingArraysToStore () {
+
+      for (var i = 0; i < myArray.length; i++) {
+        if (myArray[i] === 'a') {
+          // Here we are pushing each 'a' item to myStorage
+          storageArray.push(myArray[i]);
+        } // if statement ENDS
+        // console.log(myArray[i])
+      } // for loop ENDS
+
+      alert('I count ' + storageArray.length + ' a\'s in total');
+      // console.log(storageArray);
+
+    } // function ENDs*
+
+    usingArraysToStore();
+
+
+
+
+  }()); // iffe ENDS*
+
+
+
+
+  </script>
+</body>
+</html>

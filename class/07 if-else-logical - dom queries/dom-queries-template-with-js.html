@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		iframe {
+			/*display: none;*/
+			display: block;
+			margin: 0 auto;
+		}
+		.question {
+			font-family: 'Satisfy', cursive;
+			font-size: 80px;
+			text-align: center;
+		}
+
+		h4 {
+			 font-family: arial;		
+			 font-size: 3em;
+			 border: 1px solid #30c4ff;
+			 border-radius: 0.6em;
+			 padding: 0.45em;
+			 font-weight: 100;
+			 color: #2d2d2d;
+		}
+	</style>
+</head>
+<body>
+	<h4 class="a-class">I tried to find the rhythm of the world where I used to live. I followed the current. I was silent, attentive, I made a conscious effort to smile, nod, stand, and perform the millions of gestures that constitute life on earth. </h4>	
+	<script>
+		(function(){
+			// Code here
+
+			// Set up Dom Queries
+			// Grabs first element in the DOM with matching selector
+			var listItem = document.querySelector('.question');
+			console.log(listItem);
+
+			var listGroup = document.getElementsByClassName('a-class');
+			console.log(listGroup);
+
+			var theH1 = document.getElementsByTagName('h1');
+			console.log(theH1); 
+
+			var allPsPlease = document.querySelectorAll('p');
+			console.log(allPsPlease);
+
+			function styleChange(element, prop, value){
+				element.style[prop] = value;
+				console.log(element.style);
+				// console.log(cssProp);
+			}
+
+			// Invoking calling our new style function
+			styleChange(listItem, 'color', 'blue');
+			styleChange(listItem, 'font-size', '2px');
+
+		})();
+	</script>
+</body>
+</html>
