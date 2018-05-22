@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Event-Code</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <style>
+    div {
+      padding: 2em;
+    }
+    button {
+      margin: 1em;
+    }
+  </style>
+</head>
+<body>
+  <!-- Event Buttons   -->
+  <div>
+    <button type="button" class="btn btn-primary" id="one">One</button>
+    <button type="button" class="btn btn-secondary" id="two">Two</button>
+    <button type="button" class="btn btn-success disabled" id="three">Three</button>
+    <button type="button" class="btn btn-danger disabled" id="four">Four</button>
+ </div>
+
+ <div>
+    <div class="form-group">
+      <label for="usr">Name:</label>
+      <input type="text" class="form-control" id="usr">
+    </div>
+ </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <script>
+
+  (function() {
+    'use strict';
+
+    // js Event listener syntax
+
+    // SETUP DOM QUERIES
+    // -----------------------------------------------------------
+    var btnOne = document.getElementById('one');
+    var btnTwo = document.getElementById('two');
+    var input = document.getElementById('usr');
+
+    // EVENT LISTENER 'addEventListener' PATTERN ****
+    // -----------------------------------------------------------
+    // A standard click event listener with a callback function
+    btnOne.addEventListener('click', function(){
+      alert('a');
+    }, false);
+
+    // A click event listener that references a function 'oneEvent'
+    btnOne.addEventListener('click', oneEvent , false);
+
+    // A click event listener that uses a call back function to allow
+    // for an internal function/call invokation with an argument
+    btnOne.addEventListener('click', function() {
+      // If your event function requires an argument
+      // you can use a callback pattern within the event listener m
+      // method
+      oneEventWithArgument('Good Morning');
+    } , false);
+
+    //EVENT LISTENER 'ON' PATTERN ****
+    // -----------------------------------------------------------
+    btnTwo.onmouseover = function(){
+      console.log('hovering');
+    }
+
+    input.onfocusin = function(){
+      console.log('Its in focus');
+    }
+
+    // DEMO FUNCTIONS ***
+    // -----------------------------------------------------------
+    // Function called by
+    function oneEvent () {
+      alert('b');
+    }
+
+    function oneEventWithArgument (sayThis) {
+      alert(sayThis);
+    }
+
+  }());
+
+  </script>
+
+</body>
+</html>

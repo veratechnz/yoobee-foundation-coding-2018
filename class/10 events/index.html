@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Foundation Coding</title>
+	<link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../assets/fonts/css/font-awesome.css">
+	<link rel="stylesheet" href="../../assets/css/prism.css">
+	<link rel="stylesheet" href="../../assets/css/prism-xonokai.css">
+	<link rel="stylesheet" href="../../assets/css/custom.min.css">
+</head>
+	<!-- data attribute for js validation -->
+	<body data-page="membership">
+
+			<div class="reveal">
+
+					<body>
+						<div class="reveal">
+							<div class="slides">
+								<section>
+									<h1>Events</h1>
+									<h2>Javascript has as extensive event based API via the DOM. This means that we can listen to the DOM and trigger functions when something, at some point in time has happened.</h2>
+									<img src="../../assets/images/events.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+
+								<section>
+									<h1>Events con't</h1>
+									<img src="../../assets/images/events-more.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+
+								<section>
+									<h1>Events con't</h1>
+									<img src="../../assets/images/events-trigger.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>1. Events basic approach - 'on'</h1>
+									<img src="../../assets/images/events-dom.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>2. Events with listeners 'addEventListener()' method</h1>
+									<img src="../../assets/images/events-unlimited.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<!-- A. Create an event other than click that changes several elements css within the dom via a for loop.
+
+								Wrap your code in function declarations and iife where needed.
+
+								B. After your first event and DOM transformation occurs, subsequently trigger another DOM make a div appear in the dom after 3 seconds.  -->
+
+								<section>
+									<h1>Difference between the 2 event listener patterns</h1>
+									<img src="../../assets/images/event-diff.jpg" alt="">
+								</section>
+
+								<section>
+									<h1>Using arguments with event functions - Pattern</h1>
+									<img src="../../assets/images/event-arg.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>Event Flow</h1>
+									<a href="http://jsbin.com/unuhec/4/edit?html,js,output">
+										<p>
+											Live event flow demo
+										</p>
+									</a>
+									<img src="../../assets/images/event-flow.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>
+										Event Flow Con't - Bubbles!
+								    </h1>
+								    <a href="https://javascript.info/bubbling-and-capturing">
+								    	<p>
+								    		Why care - re: Event Propagation | Bubble / Capture
+								    	</p>
+								    </a>
+								    <img src="../../assets/images/event-bubble.jpg" alt="">
+								    <h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+							    </section>
+
+								<section>
+									<h1>Events - The event object</h1>
+									<img src="../../assets/images/event-object.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>Events - The event object con't</h1>
+									<img src="../../assets/images/event-obj-pattern.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>Events - The event object with params</h1>
+									<img src="../../assets/images/event-obj-params.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>Events - Stopping default behaviour</h1>
+									<img src="../../assets/images/event-obj-stop.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>Events - Changing default event behaviour</h1>
+									<h2>Using The Event Object</h2>
+									<h3>Also see event-object-demo.html</h3>
+									<pre>
+										<code class="language-javascript">
+											var grab = document.getElementById('thing');
+											grab.addEventListener('click', myFunction, false);
+
+											function myFunction(event) {
+												console.log(event);
+											}
+										</code>
+									</pre>
+								</section>
+
+								<section>
+									<h1>Events - Placing multiple listeners with a loop</h1>
+									<img src="../../assets/images/event-multiple-pattern.jpg" alt="">
+								</section>
+
+
+
+							</div>
+						</div>
+					</body>
+
+			</div> <!-- Reveal Div Ends -->
+
+			<script src="../../assets/js/jquery.js"></script>
+			<script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+			<script src="../../assets/js/prism.js"></script>
+			<script src="../../assets/js/bundle.js"></script>
+	</body>
+</html>
