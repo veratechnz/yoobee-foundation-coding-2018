@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Foundation Coding</title>
+	<link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../assets/fonts/css/font-awesome.css">
+	<link rel="stylesheet" href="../../assets/css/prism.css">
+	<link rel="stylesheet" href="../../assets/css/prism-xonokai.css">
+	<link rel="stylesheet" href="../../assets/css/custom.min.css">
+</head>
+	<!-- data attribute for js validation -->
+	<body data-page="membership">
+		  
+			<div class="reveal">
+
+					<body>
+						<div class="reveal">
+							<div class="slides">
+								
+								<section>
+									<h1>
+										Coding Patterns - Structuring Your Code
+									</h1>
+
+									<h2>Some Ideas for Coding Patterns</h2>
+										<a href="https://css-tricks.com/how-do-you-structure-javascript-the-module-pattern-edition">https://css-tricks.com/how-do-you-structure-javascript-the-module-pattern-edition</a>
+
+										<a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript">https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript</a> 
+									    
+									    <a href="https://alistapart.com/article/the-design-of-code-organizing-javascript">https://alistapart.com/article/the-design-of-code-organizing-javascript</a> 
+
+									    <h2>Config/Cloud Object coding pattern</h2>
+
+									    <pre>
+									    	<code class="language-javascript">
+									    		(function(){
+									    			// Setup my config/cloud object. This can be accessed to set values
+									    			// and update values from within our following code/functions.
+									    			var config = {
+									    				initialProperty: 'initial property value',
+									    				something: 'you can put whatever you need in here',
+									    				and: 'all the functions can access this data - Sweet!',
+									    				number: 2225558887774
+									    			};
+
+									    			// 1. This function makes the message via the argument
+									    			// pre invocation 
+									    			function makeMessage(myMessage){
+									    				console.log(config);
+									    				// Here we are accessing the config object 
+									    				// and are assigning it a value
+									    				config.msg = myMessage;
+
+									    				// Here we invoke shoutSomething within our own
+									    				// makeMessage function, this means that the code above
+									    				// i.e. config.msg = myMessage; is run first.
+									    				// When we call functions from within functions, we get 
+									    				// a chance to control the ORDER of code/occurence within our
+									    				// js file/environment
+									    				shoutSomething();
+									    			}
+
+									    			// 2. Function shoutSomething alerts the value of the 
+									    			// msg property 'config.msg' within the
+									    			// config object
+									    			function shoutSomething(){
+									    				console.log('a');
+									    				alert(config.msg);
+									    				// Here we have another example of calling a function
+									    				// from within a function, that allows us to have more
+									    				// control re: order and process of events. 
+									    				updateObjectValue();
+									    			}
+
+									    			// 3. update object value and log it
+									    			function updateObjectValue(){
+									    				config.msg = 'haha changed and updated!';
+									    				console.log(config.msg);
+									    			}
+
+									    			makeMessage('Hello Lewis');
+
+									    			//This console occurs last
+									    			console.log(config);
+
+									    		})();
+									    	</code>
+									    </pre>
+
+								</section>
+
+								<section>
+									<h1>Controlling Code Sequence/Order With Js</h1>
+									<pre>
+										<code class="language-javascript">
+											
+											// Ways of calling function to control the sequence of code
+											(function() {
+
+											    //Event Listener
+											    // When the window loads the setupStart function will call
+											    // and run.
+											    window.onload = setupStart;
+
+											    function setupStart () {
+											        console.log('a');
+											        console.log('b');
+											        console.log('c');
+											        // a b c logs then we call addItem
+											        addItem();
+											    } // setupStart ends
+
+
+
+											    function addItem () {
+											        console.log('d');
+											        console.log('e');
+											        console.log('f');
+											        // d e f logs then we call finaFunction
+											        finalFunction('finish');
+											        // finalFunction();
+											    } // addITem ends
+
+
+											    function finalFunction (what) {
+											        // finalFunction runs and its argument will
+											        // decide whether longFinish or shortFinish is called or not
+											        if (what === 'finish') {
+											            shortFinish();   
+											        } else {
+											            longFinish();
+											        }
+
+											        function longFinish(){
+											            console.log('This');
+											            console.log('is');
+											            console.log('a');
+											            console.log('long');
+											            console.log('finish')
+											        }
+											    } // finalFunction ends
+
+
+											    function shortFinish () {
+											        console.log('finish early'); 
+											    }
+
+											}());
+										</code>
+									</pre>
+
+								</section>
+
+
+								<section>
+									<h1>Object Programming Pattern:</h1>
+									<pre>
+										<code class="language-javascript">
+											// This a program pattern using an object literal
+
+											var app = {
+
+											 // Our first example property
+											 propertyTest: 'Carmen Sandiego',
+
+											 // A config object within the app program/object
+											 // We can use this to add and store settings and array data
+											 config: {
+											   settingA: true,
+											   language: 'en',
+											   colorSchemeA: 'blue',
+											   colorSchemeB: 'red'
+											 },
+
+											 // init function
+											 init: function () {
+											   app.config.settingA = false;
+											   app.saySomething();
+											   app.varTest();
+											   console.log(this.config.settingA);
+											   // console.log(this);
+											 },
+
+											 // Our first program method or function
+											 // This logs something to console and uses the propertyTest propertyTest
+											 // for the output
+											 saySomething: function () {
+											   console.log('Where in the world is ' + app.propertyTest + ' today ?');
+											 },
+
+											 // A method that takes an argument - A method is just a function
+											 argumentMethod: function (updater) {
+											   // Here we assign the argument with app.config.colorSchemeA dot notation
+											   // It assigns updater as the new value to the config object
+											   app.config.colorSchemeA = updater;
+											   console.log(app);
+											 },
+
+											 // Within method/function scope you are free to use variables
+											 // As we can see with 'var thing' below
+											 varTest: function () {
+											   var thing = 'aaaaa';
+											   console.log(thing);
+											 }
+
+
+											}; // app object ENDS ***
+
+											// Here we access the init method within a function
+											app.init();
+										</code>
+									</pre>
+								</section>
+
+								<section>
+									<h1>'this' In Javascript</h1>
+									<pre>
+										<code class="language-javascript">
+											var test = {
+											  prop: 42,
+											  func: function() {
+											    return this.prop;
+											  },
+											};
+
+											console.log(test.func());
+											// expected output: 42
+
+											// -----------------------------------
+
+											// In web browsers, the window object is also the global object:
+											console.log(this === window); // true
+
+											a = 37;
+											console.log(window.a); // 37
+
+											this.b = "MDN";
+											console.log(window.b)  // "MDN"
+											console.log(b)         // "MDN"
+										</code>
+									</pre>
+								</section>
+
+								<section>
+									<h1>
+										Git Merging
+									</h1>
+									<a target="_blank" href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging">Full documentation on the git merge/branch process</a>
+									<h2>In Class git group Cycle and Commands</h2>
+									<div class="row" style="border: 2px solid #efefef;  margin: 1em; padding: 0.5em;">
+										<div class="col-md-6">
+											<p>1. Make a branch - <i>git branch "branchname"</i> </p>
+											<p>2. Checkout your branch - <i>git checkout "branchname"</i> </p>
+											<p>3. Double check where you are (what branch you are on) <i>git branch</i></p>
+											<p>4. Move to sublime and do branch work/coding</p>
+											<p>5. Add files and commit your branch - <i>git add -A/ git commit -am"message"</i></p>
+											<p>6. Check out the master branch <i>git checkout master</i></p>
+											<p>7. Double check where you are (what branch you are on) <i>git branch</i></p>
+										</div>
+
+										<div class="col-md-6">
+											<p>8. Pull the latest master <i>git pull</i></p>
+											<p>9. Begin merge <i>git merge "branchname"</i></p>
+											<p>10. Fix merge conflicts if needed, via sublime text</p>
+											<p>11. git add/commit/push <b>MASTER</b></p>
+										</div>
+									</div>
+								</section>
+
+							</div> 
+						</div>
+					</body>
+
+			</div> <!-- Reveal Div Ends -->
+
+			<script src="../../assets/js/jquery.js"></script>
+			<script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+			<script src="../../assets/js/prism.js"></script>
+			<script src="../../assets/js/bundle.js"></script>
+	</body>
+</html>	
