@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Foundation Coding</title>
+	<link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../assets/fonts/css/font-awesome.css">
+	<link rel="stylesheet" href="../../assets/css/prism.css">
+	<link rel="stylesheet" href="../../assets/css/prism-xonokai.css">
+	<link rel="stylesheet" href="../../assets/css/custom.min.css">
+</head>
+	<!-- data attribute for js validation -->
+	<body data-page="membership">
+		  
+			<div class="reveal">
+
+					<body>
+						<div class="reveal">
+							<div class="slides">
+								
+								<section>
+									<h1>JSON</h1>
+									<img src="../../assets/images/json.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>JSON con't</h1>
+									<img src="../../assets/images/json-keys.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>JSON with data</h1>
+									<img src="../../assets/images/json-data.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section>
+
+								<section>
+									<h1>JSON data Structure</h1>
+									<p>As described above, a JSON is a string whose format very much resembles JavaScript object literal format. You can include the same basic data types inside JSON as you can in a standard JavaScript object — strings, numbers, arrays, booleans, and other object literals. This allows you to construct a data hierarchy, like so:</p>
+									<code>
+										<pre class="language-json">
+											{
+											  "squadName": "Super hero squad",
+											  "homeTown": "Metro City",
+											  "formed": 2016,
+											  "secretBase": "Super tower",
+											  "active": true,
+											  "members": [
+											    {
+											      "name": "Molecule Man",
+											      "age": 29,
+											      "secretIdentity": "Dan Jukes",
+											      "powers": [
+											        "Radiation resistance",
+											        "Turning tiny",
+											        "Radiation blast"
+											      ]
+											    },
+											    {
+											      "name": "Madame Uppercut",
+											      "age": 39,
+											      "secretIdentity": "Jane Wilson",
+											      "powers": [
+											        "Million tonne punch",
+											        "Damage resistance",
+											        "Superhuman reflexes"
+											      ]
+											    },
+											    {
+											      "name": "Eternal Flame",
+											      "age": 1000000,
+											      "secretIdentity": "Unknown",
+											      "powers": [
+											        "Immortality",
+											        "Heat Immunity",
+											        "Inferno",
+											        "Teleportation",
+											        "Interdimensional travel"
+											      ]
+											    }
+											  ]
+											}
+										</pre>
+									</code>
+								</section>
+
+								<section>
+									<h1>Accessing JSON Data</h1>
+									<pre>
+										<code class="language-javascript">
+											var sammy = { 
+											  "first_name"  :  "Sammy", 
+											  "last_name"   :  "Shark", 
+											  "online"      :  true 
+											}
+											// In order to access any of the values, we’ll be // using dot notation that looks like this:
+
+											sammy.first_name
+											sammy.last_name
+											sammy.online
+
+											// Deeper nested arrays and properties within the object
+
+											var user_profile = { 
+											  "username" : "SammyShark",
+											  "social_media" : [
+											    {
+											      "description" : "twitter",
+											      "link" : "https://twitter.com/digitalocean"
+											    },
+											    {
+											      "description" : "facebook",
+											      "link" : "https://www.facebook.com/DigitalOceanCloudHosting"
+											    },
+											    {
+											      "description" : "github",
+											      "link" : "https://github.com/digitalocean"
+											    }
+											  ]
+											}
+
+											alert(user_profile.social_media[1].description);
+										</code>
+									</pre>
+								</section>
+
+								<section>
+									<h1>JSON Stringify</h1>
+									<p>
+									A common use of JSON is to exchange data to/from a web server.
+									
+									When sending data to a web server, the data has to be a string.
+									
+									Convert a JavaScript object into a string with JSON.stringify().
+								    </p>
+
+								    <pre>
+								    	<code class="language-javascript">
+								    		
+								    		// We’ll look at a JSON object that we assign to the 
+								    		// variable obj, and then we’ll convert it using 
+								    		// JSON.stringify() by passing obj to the function. 
+								    		// We can assign this string to the variable 's' 
+
+								    		var obj = {"first_name" : "Sammy", "last_name" : "Shark", "location" : "Ocean"}
+
+								    		var s = JSON.stringify(obj)
+
+								    		// Now, if we work with s, we’ll have the JSON available to 
+								    		// us as a string rather than an object. 
+
+								    		'{"first_name" : "Sammy", "last_name" : "Shark", "location" : "Ocean"}'
+								    	</code>
+								    </pre>
+
+								    <pre>
+								    	<code class="language-javascript">
+								    		
+								    	</code>
+								    </pre>
+								</section>
+
+								<section>
+									<h1>JSON Parse</h1>
+									<p>Strings are useful for transporting but you’ll want to be able to convert them back to a JSON object on the client and/or the server side. While you can convert text to an object with the eval() function, it is not very secure, so we’ll use the JSON.parse() function instead.</p>
+									
+									<p>Imagine we received this text from a web server</p>
+									<p>Use the JavaScript function JSON.parse() to convert text into a JavaScript object</p>
+									<p>Use the JavaScript object in your page</p>
+									
+									<pre>
+										<code class="language-javascript">
+											//Text or json string from the server
+											'{ "name":"John", "age":30, "city":"New York"}'
+
+											var obj = JSON.parse('{ "name":"John", "age":30, "city":"New York"}');
+
+										</code>
+									</pre>
+								</section>
+
+
+							</div> <!-- slides ENDS -->
+						</div> <!-- reveal ENDS -->
+					</body>
+
+			</div> <!-- Reveal Div Ends -->
+
+			<script src="../../assets/js/jquery.js"></script>
+			<script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+			<script src="../../assets/js/prism.js"></script>
+			<script src="../../assets/js/bundle.js"></script>
+	</body>
+</html>	
