@@ -17,18 +17,20 @@
 		//The json ajax method provided by jQuery
 		//The note the 'data' returned via the getJSON method is already a json object
 		$.getJSON( "https://jsonplaceholder.typicode.com/users", 
-			function( data ) {
+		//Callback function within the getJSON method
+		 function(data) {
 			console.log(data);
 			for (var i = 0; i < data.length; i++) {
 				items.push(data[i].name);
 					// console.log(data[i].name);
-			};
-		 }).done(function() {
-			populateHTML();
+			}
+		 }).done(function(data) {
+			populateHTML(data);
   		 });
 
 		// Some code to populate the DOM after the ajax request has process
-  		function populateHTML(){
+  		function populateHTML(data){
+  			console.log(data);
   			// if items has length
   			if (items.length) {
   			  var content = '<li>' + items.join('</li><li>') + '</li>';
@@ -38,6 +40,14 @@
   		}
 
 		console.log(items);
+
+		// ***Note that this current template illustrates 2 ways of accessing the getJSON
+		// data object via the external populate html function.
+		
+		//*** 1. Has the global items array being updated, which is accessable to any function
+		//*** 2. Has the data object being passed as an argument within the scope of the .done() method. This allows the argument to be passed to populateHTML which logs the result on line 33
+
+		// ------------------------------------------------------------------------------
 
 		// Checkpoint
 		// Create a table that has the full name city and user off each user
