@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Foundation Coding</title>
+	<link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../assets/fonts/css/font-awesome.css">
+	<link rel="stylesheet" href="../../assets/css/prism.css">
+	<link rel="stylesheet" href="../../assets/css/prism-xonokai.css">
+	<link rel="stylesheet" href="../../assets/css/custom.min.css">
+</head>
+	<!-- data attribute for js validation -->
+	<body data-page="membership">
+		  
+			<div class="reveal">
+
+					<body>
+						<div class="reveal">
+							<div class="slides">
+
+								<section>
+									<h1>JS indexOf() method</h1>
+
+									<pre>
+										<code class="language-javascript">
+											// Checking if something exists in an array without indexOf()
+											var arr = ['Fish','Tigers','Sheep', 'Tigers', 'Horses'],
+											found = false;
+
+											for(var i= 0, l = arr.length; i< l; i++){
+												if(arr[i] === 'Tigers'){
+													found = true;
+													console.log('run!');
+												}
+											}
+
+											// By utilzing -1 in the indexOf syntax we can scan the array
+											// and return a true result
+											var sayWhat = arr.indexOf("Tigers") != -1;
+											console.log(sayWhat);
+
+											//Another pattern is using only the value of the item itself
+											console.log(arr.indexOf("Tigers", 2));
+										</code>
+									</pre>
+
+								</section>
+
+								<section>
+									<h1>JS filter() method (repeated from previous slides but a refresher):</h1>
+									
+									<pre>
+										<code class="language-javascript">
+											//Filtering data without the filter method
+											var arr = [
+											    {"name":"Bk's", "count": 2},
+											    {"name":"Macca's", "count": 5},
+											    {"name":"Pizza Hutt", "count": 3},
+											    {"name":"Fruit and Veges", "count": 16}
+											];
+
+											//Notice the empty array push pattern. Very common and
+											//useful for pushing and filtering a new set of data. 
+											var newArr = [];
+
+											for(var i= 0, l = arr.length; i< l; i++){
+											    if(arr[i].name === "Fruit and Veges" ){
+													newArr.push(arr[i]);
+												}
+											}
+
+											console.log("Filter results:",newArr);
+
+											//Here we use the filter method
+											var arr = [
+											    {"name":"rabbits", "count": 11},
+											    {"name":"cats", "count": 2},
+											    {"name":"dogs", "count": 5},
+											    {"name":"rabbits", "count": 35},
+											    {"name":"parrots", "count": 3},
+											    {"name":"rabbits", "count": 2},
+											    {"name":"rabbits", "count": 4}
+											];
+											    
+											var newArr = arr.filter(function(item){
+											    return item.name === "rabbits";
+											});
+											
+											// so the variable newArr contains an updated filtered array of data
+											console.log("Filter results:",newArr);
+
+										</code>
+									</pre>
+									
+								</section>
+
+								<section>
+									<h1>JS forEach() method</h1>
+									<p>The forEach method can be more readible, succinct than using a normal for loop. It also provides functional scope so variables are private when used withn a forEach method. (Variables are not scoped/private when used within a for loop.)</p>
+									<pre>
+										<code class="language-javascript">
+											var arr = [1,2,3,4,5,6,7,8];
+
+											// Uses the usual "for" loop to iterate
+											for(var i= 0, l = arr.length; i< l; i++){
+												console.log(arr[i]);
+											}
+
+											
+
+											//Uses forEach to iterate
+											arr.forEach(function(item,index){
+												console.log(item);
+											});
+										</code>
+									</pre>
+								</section>
+
+								<section>
+									<h1>jQuery $.each()</h1>
+									<h3>A jQuery method that has the ability to loop through array items and objects.</h3>
+									<pre>
+										<code class="language-javascript">
+											// Looping and printing from arrays and an object with jQuery's $.each
+
+												//First the array
+												var arr = [22,10,15,121,15,44,48,47,55,91,12,10];
+												
+												$.each(arr, function( index, value ) {
+												  console.log( index + ": " + value );
+												});
+
+												//We can also use $.each to loop over an object
+												var objA = {
+												  "flammable": "inflammable",
+												  "duh": "no duh",
+												  "really": "yes",
+												  "still reading?": "thats a bummer man!"
+												};
+
+												$.each( objA, function( key, value ) {
+												  console.log( key + ": " + value );
+												});
+										</code>
+									</pre>
+								</section>
+
+								<section>
+									<h1>Creating DOM Elements with js</h1>
+									<h3>Vanilla js approaches</h3>
+									<pre>
+										<code class="language-javascript">
+											// Creating an element with vanilla.js
+											var btn = document.createElement("BUTTON");        // Create a button element
+											var t = document.createTextNode("CLICK ME");       // Create a text node
+											btn.appendChild(t);                                
+											// Append the text to button
+											document.body.appendChild(btn);                    // Append button to body
+										</code>
+									</pre>
+								</section>
+
+								<section>
+									<h1>Creating DOM elements with jQuery</h1>
+									<p>4 ways to create DOM elements with jQuery</p>
+									<img src="../../assets/images/jquery-create.jpg" alt="">
+								</section>
+								
+
+<!-- 								<section>
+									<h1>Filtering data with jQuery methods</h1>
+									<img src="../../../../assets/images/jq-sort.jpg" alt="">
+									<h6><i>Image courtesy of Jon Duckett: "Javascript and jQuery", John Wiley & Sons Inc 2014</i></h6>
+								</section> -->
+
+
+							</div> <!-- slides ENDS -->
+						</div> <!-- reveal ENDS -->
+					</body>
+
+			</div> <!-- Reveal Div Ends -->
+
+			<script src="../../assets/js/jquery.js"></script>
+			<script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+			<script src="../../assets/js/prism.js"></script>
+			<script src="../../assets/js/bundle.js"></script>
+	</body>
+</html>	

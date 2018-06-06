@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div id="showData"></div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script>
+		var items = [];
+		var itemsId = [];
+
+		var showData = $('#showData');
+
+		//The json ajax method provided by jQuery
+		//The note the 'data' returned via the getJSON method is already a json object
+		$.getJSON( "https://jsonplaceholder.typicode.com/users", 
+			function( data ) {
+				console.log(data);
+			for (var i = 0; i < data.length; i++) {
+				items.push(data[i].name);
+				itemsId.push(data[i].id);
+
+				// **Sorting alpha - js method
+				items.sort(function(a, b){
+				    if(a < b) return -1;
+				    if(a > b) return 1;
+				    return 0;
+				})
+
+				// ** Sorting numerically ***Descending - js method
+				itemsId.sort(function(a, b){
+					return b-a
+				});
+
+			};
+		 }).done(function() {
+		 	console.log(items);
+		 	console.log(itemsId);
+			populateHTML();
+  		});
+
+		// Some code to populate the DOM after the ajax request has process
+  		function populateHTML(){
+  			// if items has length
+  			if (items.length) {
+  			  var content = '<li>' + items.join('</li><li>') + '</li>';
+  			  var list = $('<ul />').html(content);
+  			  showData.append(list);
+
+  			  var content = '<li>' + itemsId.join('</li><li>') + '</li>';
+  			  var list = $('<ul />').html(content);
+  			  showData.append(list);
+  			}
+  		}
+
+	</script>
+	
+</body>
+</html>

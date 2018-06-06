@@ -10,8 +10,11 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script>
+
+		// An external empty array to store json data
 		var items = [];
 
+		// Grab the showData div from the DOM
 		var showData = $('#showData');
 
 		//The json ajax method provided by jQuery
@@ -43,7 +46,7 @@
 
 		// ***Note that this current template illustrates 2 ways of accessing the getJSON
 		// data object via the external populate html function.
-		
+
 		//*** 1. Has the global items array being updated, which is accessable to any function
 		//*** 2. Has the data object being passed as an argument within the scope of the .done() method. This allows the argument to be passed to populateHTML which logs the result on line 33
 

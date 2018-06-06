@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+</head>
+<body>
+	<ul id="eggsFromArray">
+		
+	</ul>
+
+	<ul id="eggsFromObject">
+		
+	</ul>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script>
+	// Looping and printing from arrays and an object with jQuery's $.each
+
+		//First the array
+		var arr = [22,10,15,121,15,44,48,47,55,91,12,10];
+		
+		$.each(arr, function( index, value ) {
+		  console.log( index + ": " + value );
+		});
+
+		//We can also use $.each to loop over an object
+		var objA = {
+		  "flammable": "inflammable",
+		  "duh": "no duh",
+		  "really": "yes",
+		  "still reading?": "thats a bummer man!"
+		};
+
+		// var foodBagObj = {
+		// 	"foodA": "egg",
+		// 	"FoodB": "carrots",
+		// 	"FoodC": "beans",
+		// 	"FoodD": "egg",
+		// 	"FoodE": "apples",
+		// 	"FoodF": "steak",
+		// 	"FoodG": "egg"
+		// }
+
+		$.each( ObjA, function( key, value ) {
+		  console.log( key + ": " + value );
+		});
+
+		// *Checkpoint:
+		// 1. Use $.each (and possibly some extra internal code) to print all of the eggs to the console. 1 $.each for the obj and 1 $.each for the array. 
+		// 2. After step 1. Place the eggs into 2 seperate lists within the DOM. One titled Array Basket & one titled Object Basket. 
+
+		var foodBagArr = ['steak', 'noodles', 'egg1', 'chicken', 'pasta', 'mushrooms', 'salad', 'egg2', 'egg3', 'egg4', 'butter', 'beer', 'milk', 'egg5']
+
+
+
+
+
+	</script>
+</body>
+</html>
