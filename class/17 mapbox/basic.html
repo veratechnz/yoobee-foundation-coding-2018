@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+
+  <div id='map'></div>
+  <script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoidmVyYXRlY2giLCJhIjoiY2o1dWtld2tqMG1teDJya2Y3eDV5ZDc2cSJ9.knt-_386-rLZa4uhP_ccyg';
+  var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/veratech/cj81yl1iq9amp2slibe03sm3c', // stylesheet location
+    center: [174.780729, -41.298215], // starting position [lng, lat]
+    zoom: 10 // starting zoom
+  });
+
+  map.on('load', function() {
+    map.addLayer({
+      id: 'historical-places',
+      type: 'circle',
+      source: {
+        type: 'vector',
+        url: 'mapbox://your-map-id-here'
+      },
+      'source-layer': 'your-source-layer-here',
+    });
+  });
+
+  </script>
+
+  </body>
+</html>
