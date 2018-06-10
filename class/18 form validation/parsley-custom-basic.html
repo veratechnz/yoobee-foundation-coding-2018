@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<style>
+			/*Parsley css style overrides*/
+			input.parsley-error,
+			select.parsley-error,
+			textarea.parsley-error {    
+			    border-color:#843534;
+			    box-shadow: none;
+			}
+
+
+			input.parsley-error:focus,
+			select.parsley-error:focus,
+			textarea.parsley-error:focus {    
+			    border-color:#843534;
+			    box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #ce8483
+			}
+		</style>
+</head>
+<body style="padding-top: 5.5em;">
+
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			
+			<form method="post" class="form-horizontal" id="pForm">
+			     
+				 <div class="form-group">
+					 <label class="col-sm-3 control-label">Alphabets</label>
+					 <div class="col-sm-6">
+					 <!-- Pattern accepts only alphabetic characters with white space -->
+					 <input type="text" class="form-control" required data-parsley-pattern="^[a-zA-Z ]+$" placeholder="Type something" />
+					 </div>
+				 </div>
+				            
+				           
+				 <div class="form-group">
+					 <label class="col-sm-3 control-label">Equal To</label>
+					 <div class="col-sm-3">
+					 <!-- String should be within 6 and 10 characters -->
+					 <input type="password" id="pass2" class="form-control" required data-parsley-length="[6, 10]" data-parsley-trigger="keyup" placeholder="Password" />   
+					 </div>
+					 <div class="col-sm-3">
+					 <!-- Matches the 2 fields for equality -->
+					 <input type="password" class="form-control" required data-parsley-equalto="#pass2" data-parsley-trigger="keyup" placeholder="Re-Type Password" />    
+					 </div>
+				 </div>
+				            
+				 <div class="form-group">
+					 <label class="col-sm-3 control-label">E-Mail</label>
+					 <div class="col-sm-6">
+					 <!-- Triggers validation check on key up -->
+					 <input type="email" class="form-control" required data-parsley-type="email" data-parsley-trigger="keyup" placeholder="Enter a valid e-mail" />    
+					 </div>
+				 </div>
+				     
+				 <div class="form-group">
+					 <label class="col-sm-3 control-label">URL</label>
+					 <div class="col-sm-6">
+					 <!-- Data type must be in the format of an url -->
+					 <input type="url" class="form-control" required data-parsley-type="url" placeholder="URL" />
+					 </div>
+				 </div>
+				     
+				 <div class="form-group">
+					 <label class="col-sm-3 control-label">Number</label>
+					 <div class="col-sm-6">
+					 <!-- Data type myst be a number -->
+					 <input type="text" class="form-control" required data-parsley-type="number" placeholder="Enter only numbers" />
+					 </div>
+				 </div>
+				     
+				 <div class="form-group">
+					 <label class="col-sm-3 control-label">Alphanumeric</label>
+					 <div class="col-sm-6">
+					 <!-- Data type must be an alpha numeric string -->
+					 <input type="text" class="form-control" required data-parsley-type="alphanum" placeholder="Enter alphanumeric value" />
+					 </div>
+				 </div>
+				     
+				 <div class="form-group">
+					 <label class="col-sm-3 control-label">Select Box</label>
+					 <div class="col-sm-6">
+					 <select class="form-control" required>
+					      <option value="" selected="selected"> - Select - </option>
+					      <option>First Value</option>
+					      <option>Second Value</option>
+					             <option>Third Value</option>
+					      <option>Fourth Value</option>
+					 </select>
+					 </div>
+				 </div>
+				     
+				 <div class="form-group">
+					 <label class="col-sm-3 control-label">Textarea</label>
+					 <div class="col-sm-6">
+					 <textarea required class="form-control"></textarea>
+					 </div>
+				 </div>
+				     
+				 <div class="form-group">
+					 <div class="col-sm-offset-3 col-sm-9 m-t-15">
+					 <button type="submit" class="btn btn-primary">Submit</button>
+					 <button type="reset" class="btn btn-default m-l-5">Cancel</button>
+					 </div>
+				 </div>
+			     
+			</form>
+		</div>
+	</div>
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="parsley.js"></script>
+	<script type="text/javascript">
+	$(function () {
+	  $('#pForm').parsley();
+	});
+	</script>
+</body>
+</html>

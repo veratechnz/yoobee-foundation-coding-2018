@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div id="showData"></div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script>
+	  // Made anempty array
+		var items = [];
+		var itemsIds = [];
+
+		var showData = $('#showData');
+
+		//The json ajax method provided by jQuery
+		//Note that 'data' returned via the getJSON method is already a json object
+		$.getJSON( "https://jsonplaceholder.typicode.com/users",
+		//Callback function within the getJSON method
+		 function(data) {
+			// console.log(data);
+			for (var i = 0; i < data.length; i++) {
+				items.push(data[i].address.street);
+				itemsIds.push(data[i].id);
+			}
+		 }).done(function(data) {
+			 // console.log(itemsIds);
+			populateHTML(data);
+		});
+
+		// Some code to populate the DOM after the ajax request has process
+  		function populateHTML(data){
+				// console.log('working?');
+				// Re-sorting array data alphabetically
+  			var sortedData = items.sort();
+				var sortItemIds = itemsIds.sort(sortNumber);
+
+
+				// Number sorting code ENDS
+
+				// Number sorting code
+				function sortNumber(a, b) {
+				    return b - a;
+				}
+
+				console.log(itemsIds);
+
+  			// if items has length
+  			if (items.length) {
+
+  			  var content = '<li>' + sortedData.join('</li><li>') + '</li>';
+  			  var list = $('<ul />').html(content);
+  			  showData.append(list);
+
+  			}
+
+				// if items has length
+  			if (itemsIds.length) {
+
+  			  var contentB = '<li>' + sortItemIds.join('</li><li>') + '</li>';
+  			  var listB = $('<ul />').html(contentB);
+  			  showData.append(listB);
+
+  			}
+
+  		}
+
+		// console.log(items);
+
+		// ***Note that this current template illustrates 2 ways of accessing the getJSON
+		// data object via the external populate html function.
+
+		//*** 1. Has the global items array being updated, which is accessable to any function
+		//*** 2. Has the data object being passed as an argument within the scope of the .done() method. This allows the argument to be passed to populateHTML which logs the result on line 33
+
+		// ------------------------------------------------------------------------------
+
+		// Checkpoint
+		// Create a table that has the full name city and user off each user
+		// Tidy the appearance and layout with css
+		// Use a setTimeout to create/simulate a sever delay and use a custom loading gif
+		// to inform the user of this delay - see https://loading.io/
+	</script>
+
+</body>
+</html>
