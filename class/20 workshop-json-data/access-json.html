@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+	<div class="container">
+		<div class="row">
+			<h1>Accessing json data</h1>
+		</div>
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+	<!-- *1 json string approach via - http://www.webtoolkitonline.com/json-minifier.html -->
+	<script type="text/javascript" src="json.js"></script>
+
+	<!-- *2 straight js object approach - here if needed https://json-to-js.com/ -->
+	<script type="text/javascript" src="js-object.js"></script>
+
+	<script>
+	// *1 json string approach
+		var json = JSON.parse(data);
+		console.log(json);
+
+	// *2 js object/Array approach
+		console.log(dataArray);
+	
+	</script>
+</body>
+</html>
+
+
