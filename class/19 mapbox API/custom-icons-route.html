@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Display driving directions</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.2/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.2/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+
+<!-- Directions/Geocoder API links -->
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.1/mapbox-gl-directions.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.1/mapbox-gl-directions.css' type='text/css' />
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.2.0/mapbox-gl-geocoder.min.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.2.0/mapbox-gl-geocoder.css' type='text/css' />
+<!-- Directions/Geocoder API links ***End -->
+
+<div class="custom-inputs directions">
+  <input type="text" id="origin" class="origin">
+  <input type="text" id="destination" class="destination">
+</div>
+
+<div id='map'></div>
+
+<script>
+(function(){
+    var token = 'pk.eyJ1IjoidmVyYXRlY2giLCJhIjoiY2phYmZ1NXFmMHIwMDM1cGV4bHV4bHhzbSJ9.gbT5J_uXxbjRRuj00D7Xeg';
+
+    mapboxgl.accessToken = token;
+
+    var directions = new MapboxDirections({
+      accessToken: token,
+      unit: 'metric',
+      // Hiding the direction ui controls
+      controls: {
+        inputs: false,
+        instructions: true
+      }
+    });
+
+    var geocoder = new MapboxGeocoder({
+        accessToken: token
+    });
+
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v9',
+      center: [-79.4512, 43.6568],
+      zoom: 13
+    });
+
+    map.addControl(directions, 'top-left');
+
+    // console.log(directions);
+
+    directions.on('route', function(directions){
+        // var datapls = directions.getDestination();
+        console.log(directions);
+        // alert('Your trip will be: ' + directions.route['0'].distance / 1000 + ' kms');
+    }); 
+
+
+
+})();
+
+</script>
+
+</body>
+</html>
