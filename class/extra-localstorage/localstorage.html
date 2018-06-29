@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+  <meta charset="UTF-8">
+  <title>localStorage Notepad</title>
+
+  <style type="text/css">
+    body {
+      background: #ABC;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
+    .notepad {
+      background: #FAFAFA;
+      border: 1px solid #CCC;
+      border-radius: 5px;
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+      min-height: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      width: 440px;
+    }
+  </style>
+</head>
+
+<body>  
+  <div class="notepad" contentEditable="true"></div>
+
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/zepto/1.0rc1/zepto.min.js "></script>
+  <script>
+	  $(function() {
+	    // Create a shorthand variable to save typing
+	    var ls = window.localStorage;
+
+	    // Check for local data, then apply
+	    if (ls.getItem("data")) {
+	      $(".notepad").text(ls.getItem("data"));
+	    }
+
+	    // Save text
+	    $("body").on('click', function() {
+	      ls.setItem("data", $(".notepad").text());
+	    });
+	  });
+	// Let's clear up some of the ideas around localStorage. You might be aware of "cookies", which sites use to remember you or your login. Cookies are very limited in size and really aren't meant to store actual data. localStorage, on the other hand, is meant for sites to have a 5-10MB space on your PC to save whatever they may need. This storage is NOT sent to the server, in contrast to cookies. This means all data stored with localStorage is kept on that one computer, and only accessible by the browser you used to create the data. Every modern browser supports this, so let's look into the code (Javascript knowledge is needed):
+
+	// Basic Get in localstorage
+	// A.
+	// Setting a local storage item with key and value
+		// localStorage.setItem('favoriteflavor','vanilla');
+		// var taste = localStorage.getItem('favoriteflavor');
+		// console.log(taste);
+
+	// Basic Set in localstorage
+	// B.
+	// localStorage.removeItem('favoriteflavor');
+	// var taste = localStorage.getItem('favoriteflavor');
+	// console.log(taste);
+
+	// Storing an object in localstorage
+	// C.
+	// var car = {};
+	// car.wheels = 4;
+	// car.doors = 2;
+	// car.sound = 'vroom';
+	// car.name = 'Lightning McQueen';
+	// // console.log( car );
+	// localStorage.setItem( 'car', JSON.stringify(car) );
+	// console.log( JSON.parse( localStorage.getItem( 'car' ) ) );
+
+	// D.
+	// Clearing Local Storage 1. Browser Method
+	// 2.
+	// window.localStorage.clear();
+	</script>
+</body>
+</html>
